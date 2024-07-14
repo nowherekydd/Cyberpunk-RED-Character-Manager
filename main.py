@@ -94,8 +94,7 @@ def main():
         elif choice == "R":
             skillroller()
         elif choice == "V":
-            asciiart.charsheetheader()
-            view_character_sheet()
+            waynesheet.charDisplay()
             input("Press Enter to continue...")
         elif choice == "D":
             debugmenu()

@@ -14,6 +14,8 @@
 import math
 import waynescore
 import wayneskill
+import asciiart
+import txtfrm
 
 # Basic char info.
 
@@ -45,5 +47,11 @@ empScore = math.floor(humScore / 10)
 
 # Charsheet format here.
 
-def charDisplay:
+def charDisplay():
+    asciiart.charsheetheader()
+    print(txtfrm.bold("Test"))
     print("Test successful.")
+    
+# Prints out charsheet on run for debug/testing.
+
+charDisplay()
