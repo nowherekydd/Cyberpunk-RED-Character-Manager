@@ -1,14 +1,19 @@
+#   _____ _____   _____ _      _____ 
+#  / ____|  __ \ / ____| |    |_   _|
+# | |    | |__) | |    | |      | |  
+# | |    |  _  /| |    | |      | |  
+# | |____| | \ \| |____| |____ _| |_ 
+#  \_____|_|  \_\\_____|______|_____|
+#
+# Cyberpunk: RED CLI Character Manager
+# by nowherekydd // v0d
+# Character Sheet
+
 # Import modules.
 
 import math
 import waynescore
 import wayneskill
-
-#####################################
-# Cyberpunk RED Character Sheet v0d #
-# by nowherekydd # Updated 7/13/24  #
-#         Github here later         #
-#####################################
 
 # Basic char info.
 
@@ -38,18 +43,7 @@ humLoss = 49
 humScore = maxHUM - humLoss
 empScore = math.floor(humScore / 10)
 
-#####################################
+# Charsheet format here.
 
-# Outputs char info for debugging.
-print("Name:", charName)
-print("Alias:", charHandle)
-print("----------")
-print("Max HP:", maxHP)
-print("Seriously wounded at", sevWound)
-print("----------")
-print("Max Humanity:", maxHUM)
-print("Humanity Loss:", humLoss)
-print("Current Humanity:", humScore)
-print("Current EMP:", empScore)
-print("----------")
-print(f"Concentration: {wayneskill.concBase} ({wayneskill.concSkill}, {wayneskill.concLevel}, {wayneskill.concMisc})")
+def charDisplay:
+    print("Test successful.")

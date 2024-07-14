@@ -24,4 +24,6 @@ Planned:
 - Advanced character sheet
 - Cyber references [possibly database?]
 
+I would love to eventually do a GUI/character creator, but that is not on the horizon any time soon.
+
 If you have any suggestions/comments, please feel free to let me know in any form of contact. I'm new to GitHub so I'm not quite sure how it works just yet.

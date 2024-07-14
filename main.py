@@ -1,6 +1,18 @@
-import random
-import asciiart
-from wayneskill import skillDict
+#   _____ _____   _____ _      _____ 
+#  / ____|  __ \ / ____| |    |_   _|
+# | |    | |__) | |    | |      | |  
+# | |    |  _  /| |    | |      | |  
+# | |____| | \ \| |____| |____ _| |_ 
+#  \_____|_|  \_\\_____|______|_____|
+#
+# Cyberpunk: RED CLI Character Manager
+# by nowherekydd // v0d
+# Main Program
+
+import random # For dice rolling
+import asciiart # To print out relevant ASCII
+import waynesheet # Character sheet.
+from wayneskill import skillDict # For skill dictionary. Maybe find a way to make it more generic for future plugin?
 
 def debugmenu():
     print("Skill Dictionary:")
@@ -34,9 +46,6 @@ def roll_skill(skill_modifier):
     roll = random.randint(1, 10)
     total = roll + skill_modifier
     return roll, skill_modifier, total
-
-def view_character_sheet():
-    print("Character Sheet:")
 
 def skillroller():
     while True:
@@ -85,6 +94,7 @@ def main():
         elif choice == "R":
             skillroller()
         elif choice == "V":
+            asciiart.charsheetheader()
             view_character_sheet()
             input("Press Enter to continue...")
         elif choice == "D":

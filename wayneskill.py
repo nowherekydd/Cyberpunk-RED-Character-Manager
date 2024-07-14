@@ -1,17 +1,16 @@
+#   _____ _____   _____ _      _____ 
+#  / ____|  __ \ / ____| |    |_   _|
+# | |    | |__) | |    | |      | |  
+# | |    |  _  /| |    | |      | |  
+# | |____| | \ \| |____| |____ _| |_ 
+#  \_____|_|  \_\\_____|______|_____|
+#
+# Cyberpunk: RED CLI Character Manager
+# by nowherekydd // v0d
+# Skillsheet - maybe roll into main character sheet later?
+
 # Import modules.
 import waynescore
-
-#####################################
-#  Cyberpunk RED CharSkill Def v0d  #
-# by nowherekydd # Updated 7/13/24  #
-#         Github here later         #
-#####################################
-
-# Template
-#Skill = waynescore.Score
-#Level = 2
-#Misc = 0
-#Base = Skill + Level + Misc
 
 # Awareness Skills
 concSkill = waynescore.willScore
