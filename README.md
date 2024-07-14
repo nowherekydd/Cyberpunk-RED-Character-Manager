@@ -9,6 +9,9 @@
 
 This is a little pet/passion project that I'm currently working on to add to my Python portfolio. As of right now an executable is not on the horizon, but hopefully once I have more free time I can get to it. If you've got knowledge on Python and know how to edit, feel free to download the source code and run it on your own machine.
 
+Based off of Senjak's RED GSheet... sheet. 
+https://docs.google.com/spreadsheets/d/10j2XMfCsnLlROEFHeLCEhE6RJd4ENXOaqfCdsz6nOlo/edit?gid=510767756#gid=510767756
+
 Current features:
 - Skill check menu divided by category
 - Ability to re-roll a skill without having to redo category selection
