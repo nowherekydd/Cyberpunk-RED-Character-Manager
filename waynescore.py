@@ -16,3 +16,5 @@ moveScore = 7
 bodyScore = 5
 maxempScore = 8
 maxluckScore = 5
+
+empScore = maxempScore - 6

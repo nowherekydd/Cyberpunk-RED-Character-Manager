@@ -173,6 +173,160 @@ meleeLevel = 2
 meleeMisc = 0
 meleeBase = meleeSkill + meleeLevel + meleeMisc
 
+# Performance Skills
+actSkill = waynescore.coolScore
+actLevel = 0
+actMisc = 0
+actBase = actSkill + actLevel + actMisc
+
+# Ranged Weapon Skills
+archSkill = waynescore.refScore
+archLevel = 0
+archMisc = 0
+archBase = archSkill + arhcLevel + archMisc
+
+autoSkill = waynescore.refScore
+autoLevel = 0
+autoMisc = 0
+autoBase = autoSkill + autoLevel + autoMisc
+
+handSkill = waynescore.refScore
+handLevel = 0
+handMisc = 0
+handBase = handSkill + handLevel + handMisc
+
+heavySkill = waynescore.refScore
+heavyLevel = 0
+heavyMisc = 0
+heavyBase = heavySkill + heavyLevel + heavyMisc
+
+shoulderSkill = waynescore.refScore
+shoulderLevel = 0
+shoulderMisc = 0
+shoulderBase = shoulderSkill + shoulderLevel + shoulderMisc
+
+# Social Skills
+bribeSkill = waynescore.coolScore
+bribeLevel = 0
+bribeMisc = 0
+bribeBase = bribeSkill + bribeLevel + bribeMisc
+
+convSkill = waynescore.empScore
+convLevel = 2
+convMisc = 0
+convBase = convSkill + convLevel + convMisc
+
+huperSkill = waynescore.empScore
+huperLevel = 2
+huperMisc = 0
+huperBase = huperSkill + huperLevel + huperMisc
+
+interSkill = waynescore.coolScore
+interLevel = 0
+interMisc = 0
+interBase = interSkill + interLevel + interMisc
+
+persSkill = waynescore.coolScore
+persLevel = 0
+persMisc = 0
+persBase = persSkill + persLevel + persMisc
+
+groomSkill = waynescore.coolScore
+groomLevel = 4
+groomMisc = 0
+groomBase = groomSkill + groomLevel + groomMisc
+
+streetSkill = waynescore.coolScore
+streetLevel = 3
+streetMisc = 0
+streetBase = streetSkill + streetLevel + streetMisc
+
+tradeSkill = waynescore.coolScore
+tradeLevel = 0
+tradeMisc = 0
+tradeBase = tradeSkill = tradeLevel + tradeMisc
+
+styleSkill = waynescore.coolScore
+styleLevel = 2
+styleMisc = 0
+styleBase = styleSkill + styleLevel + styleMisc
+
+# Tech Skills
+airtechSkill = waynescore.techScore
+airtechLevel = 0
+airtechMisc = 0
+airtechBase = airtechSkill + airtechLevel + airtechMisc
+
+basictechSkill = waynescore.techScore
+basictechLevel = 2
+basictechMisc = 0
+basictechBase = basictechSkill + basictechLevel + basictechMisc
+
+cybertechSkill = waynescore.techScore
+cybertechLevel = 6
+cybertechMisc = 0
+cybertechBase = cybertechSkill + cybertechLevel + cybertechMisc
+
+demotechSkill = waynescore.techScore
+demotechLevel = 0
+demotechMisc = 0
+demotechBase = demotechSkill + demotechLevel + demotechMisc
+
+sectechSkill = waynescore.techScore
+sectechLevel = 0
+sectechMisc = 0
+sectechBase = sectechSkill + sectechLevel + sectechMisc
+
+firstaidSkill = waynescore.techScore
+firstaidLevel = 2
+firstaidMisc = 0
+firstaidBase = firstaidSkill + firstaidLevel + firstaidMisc
+
+forgeSkill = waynescore.techScore
+forgeLevel = 0
+forgeMisc = 0
+forgeBase = forgeSkill + forgeLevel + forgeMisc
+
+landveSkill = waynescore.techScore
+landveLevel = 2
+landveMisc = 0
+landveBase = landveSkill + landveLevel + landveMisc
+
+paintSkill = waynescore.techScore
+paintLevel = 0
+paintMisc = 0
+paintBase = paintSkill + paintLevel + paintMisc
+
+paraSkill = waynescore.techScore
+paraLevel = 0
+paraMisc = 0
+paraBase = paraSkill + paraLevel + paraMisc
+
+photoSkill = waynescore.techScore
+photoLevel = 0
+photoMisc = 0
+photoBase = photoSkill + photoLevel + photoMisc
+
+picklockSkill = waynescore.techScore
+picklockLevel = 0
+picklockMisc = 0
+picklockBase = picklockSkill + picklockLevel + picklockMisc
+
+pickpocketSkill = waynescore.techScore
+pickpocketLevel = 0
+pickpocketMisc = 0
+pickpocketBase = pickpocketSkill + pickpocketLevel + pickpocketMisc
+
+seaveSkill = waynescore.techScore
+seaveLevel = 0
+seaveMisc = 0
+seaveBase = seaveSkill + seaveLevel + seaveMisc
+
+weptechSkill = waynescore.techScore
+weptechLevel = 2
+weptechMisc = 0
+weptechBase = weptechSkill + weptechLevel + weptechMisc
+
 ###################################################
 
 # Multi-Option Skills
@@ -212,6 +366,19 @@ martialLevelA = 5
 martialMiscA = 0
 martialBaseA = martialSkillA + martialLevelA + martialMiscA
 martialTypeA = "Judo"
+
+## Instrument Skills
+playSkillA = waynescore.techScore
+playLevelA = 4
+playMiscA = 0
+playBaseA = playSkillA + playLevelA + playMiscA
+playTypeA = "Guitar"
+
+playSkillB = waynescore.techScore
+playLevelB = 4
+playMiscB = 0
+playBaseB = playSkillB + playLevelB + playMiscB
+playTypeB = "Vocals"
 
 # Print for debug.
 print("Awareness Skills")
@@ -254,11 +421,15 @@ print("Melee Fighting Skills")
 print(f"Brawling: {brawlBase}")
 print(f"Evasion: {evadeBase}")
 print(f"Melee Weapons: {meleeBase}")
+print("----------------------")
+print("Performance Skills")
+print(f"Acting: {actBase}")
 print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
 print("~~~~ Multi-Option Skills ~~~~")
 print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
 print(f"Language ({langTypeA}): {langBaseA}")
 print(f"Language ({langTypeB}): {langBaseB}")
 print(f"Local Expert ({localTypeA}): {langBaseA}")
-print("Science: null")
 print(f"Martial Arts ({martialTypeA}): {martialBaseA}")
+print(f"Play Instrument ({playTypeA}): {playBaseA}")
+print(f"Play Instrument ({playTypeB}): {playBaseB}")
