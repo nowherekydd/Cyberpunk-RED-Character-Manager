@@ -380,102 +380,180 @@ playMiscB = 0
 playBaseB = playSkillB + playLevelB + playMiscB
 playTypeB = "Vocals"
 
+skillDict = {
+    "Awareness Skills": {
+        "Concentration": concBase,
+        "Conceal/Reveal Object": conrevBase,
+        "Lip Reading": lipBase,
+        "Perception": percBase,
+        "Tracking": trackBase,
+        },
+    "Body Skills": {
+        "Athletics": athBase,
+        "Contortionist": contBase,
+        "Dance": danceBase,
+        "Endurance": endBase,
+        "Resist Torture/Drugs": resistBase,
+        "Stealth": sneakBase,
+        },
+    "Control Skills": {
+        "Drive Land": landBase,
+        "Pilot Air": airBase,
+        "Pilot Sea": seaBase,
+        "Riding": rideBase,
+        },
+    "Education Skills": {
+        "Accounting": accBase,
+        "Animal Handling": animBase,
+        "Bureaucracy": bureauBase,
+        "Business": busiBase,
+        "Composition": compBase,
+        "Criminology": crimBase,
+        "Cryptography": cryptoBase,
+        "Deduction": dedBase,
+        "Education": eduBase,
+        "Gambling": gambleBase,
+        f"Language ({langTypeA})": langBaseA,
+        f"Language ({langTypeB})": langBaseB,
+        "Library Search": libBase,
+        f"Local Expert ({localTypeA})": localBaseA,
+        "Tactics": tacBase,
+        "Wilderness Survival": wildBase,
+        },
+    "Melee Fighting Skills": {
+        "Brawling": brawlBase,
+        "Evasion": evadeBase,
+        f"Martial Arts ({martialTypeA})": martialBaseA,
+        "Melee Weapons": meleeBase,
+        },
+    "Performance Skills": {
+        "Acting": actBase,
+        f"Play Instrument ({playTypeA})": playBaseA,
+        f"Play Instrument ({playTypeB})": playBaseB,
+        },
+    "Ranged Weapon Skills": {
+        "Archery": archBase,
+        "Autofire": autoBase,
+        "Handguns": handBase,
+        "Heavy Weapons": heavyBase,
+        "Shoulder Arms": shoulderBase,
+        },
+    "Social Skills": {
+        "Bribery": bribeBase,
+        "Conversation": convBase,
+        "Human Perception": huperBase,
+        "Interrogation": interBase,
+        "Persuasion": persBase,
+        "Personal Grooming": groomBase,
+        "Streetwise": streetBase,
+        "Trading": tradeBase,
+        "Wardrobe and Style": styleBase,
+        },
+    "Technique Skills": {
+        "Air Vehicle Tech": airtechBase,
+        "Basic Tech": basictechBase,
+        "Cybertech": cybertechBase,
+        "Demolitions": demotechBase,
+        "Electronics/Security Tech": sectechBase,
+        "First Aid": firstaidBase,
+        "Forgery": forgeBase,
+        "Land Vehicle Tech": landveBase,
+        "Paint/Draw/Sculpt": paintBase,
+        "Paramedic": paraBase,
+        "Photography/Film": photoBase,
+        "Pick Lock": picklockBase,
+        "Pick Pocket": pickpocketBase,
+        "Sea Vehicle Tech": seaveBase,
+        "Weaponstech": weptechBase,
+        },
+    }
+
 # Prompt/print for debug.
-
-debug = True
-
-while debug:
-    debugmode = input("Print skillsheet for debugging? (Y/N) ")
-    
-    if debugmode.upper() == "Y":
-        print("Awareness Skills")
-        print(f"Concentration: {concBase}")
-        print(f"Conceal/Reveal Object: {conrevBase}")
-        print(f"Lip Reading: {lipBase}")
-        print(f"Perception: {percBase}")
-        print(f"Tracking: {trackBase}")
-        print("----------------------")
-        print("Body Skills")
-        print(f"Athletics: {athBase}")
-        print(f"Contortionist: {contBase}")
-        print(f"Dance: {danceBase}")
-        print(f"Endurance: {endBase}")
-        print(f"Resist Torture/Drugs: {resistBase}")
-        print(f"Stealth: {sneakBase}")
-        print("----------------------")
-        print("Control Skills")
-        print(f"Drive Land: {landBase}")
-        print(f"Pilot Air: {airBase}")
-        print(f"Pilot Sea: {seaBase}")
-        print(f"Riding: {rideBase}")
-        print("----------------------")
-        print("Education Skills")
-        print(f"Accounting: {accBase}")
-        print(f"Animal Handling: {animBase}")
-        print(f"Bureaucracy: {bureauBase}")
-        print(f"Business: {busiBase}")
-        print(f"Composition: {compBase}")
-        print(f"Criminology: {crimBase}")
-        print(f"Cryptography: {cryptoBase}")
-        print(f"Deduction: {dedBase}")
-        print(f"Education: {eduBase}")
-        print(f"Gambling: {gambleBase}")
-        print(f"Library Search: {libBase}")
-        print(f"Tactics: {tacBase}")
-        print(f"Wilderness Survival: {wildBase}")
-        print("----------------------")
-        print("Melee Fighting Skills")
-        print(f"Brawling: {brawlBase}")
-        print(f"Evasion: {evadeBase}")
-        print(f"Melee Weapons: {meleeBase}")
-        print("----------------------")
-        print("Performance Skills")
-        print(f"Acting: {actBase}")
-        print("----------------------")
-        print("Ranged Weapon Skills")
-        print(f"Archery: {archBase}")
-        print(f"Autofire: {autoBase}")
-        print(f"Handguns: {handBase}")
-        print(f"Heavy Weapons: {heavyBase}")
-        print(f"Shoulder Arms: {shoulderBase}")
-        print("----------------------")
-        print("Social Skills")
-        print(f"Bribery: {bribeBase}")
-        print(f"Conversation: {convBase}")
-        print(f"Human Perception: {huperBase}")
-        print(f"Interrogation: {interBase}")
-        print(f"Persuasion: {persBase}")
-        print(f"Personal Grooming: {groomBase}")
-        print(f"Streetwise: {streetBase}")
-        print(f"Trading: {tradeBase}")
-        print(f"Wardrobe and Style: {styleBase}")
-        print("----------------------")
-        print("Technique Skills")
-        print(f"Air Vehicle Tech: {airtechBase}")
-        print(f"Basic Tech: {basictechBase}")
-        print(f"Cybertech: {cybertechBase}")
-        print(f"Demolitions: {demotechBase}")
-        print(f"Electronics/Security Tech: {sectechBase}")
-        print(f"First Aid: {firstaidBase}")
-        print(f"Forgery: {forgeBase}")
-        print(f"Land Vehicle Tech: {landveBase}")
-        print(f"Paint/Draw/Sculpt: {paintBase}")
-        print(f"Paramedic: {paraBase}")
-        print(f"Photography/Film: {photoBase}")
-        print(f"Pick Lock: {picklockBase}")
-        print(f"Pick Pocket: {pickpocketBase}")
-        print(f"Sea Vehicle Tech: {seaveBase}")
-        print(f"Weaponstech: {weptechBase}")
-        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-        print("~~~~ Multi-Option Skills ~~~~")
-        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-        print(f"Language ({langTypeA}): {langBaseA}")
-        print(f"Language ({langTypeB}): {langBaseB}")
-        print(f"Local Expert ({localTypeA}): {langBaseA}")
-        print(f"Martial Arts ({martialTypeA}): {martialBaseA}")
-        print(f"Play Instrument ({playTypeA}): {playBaseA}")
-        print(f"Play Instrument ({playTypeB}): {playBaseB}")
-        break
-        
-    else:
-        break
+def debugmenu():
+    print("Awareness Skills")
+    print(f"Concentration: {concBase}")
+    print(f"Conceal/Reveal Object: {conrevBase}")
+    print(f"Lip Reading: {lipBase}")
+    print(f"Perception: {percBase}")
+    print(f"Tracking: {trackBase}")
+    print("----------------------")
+    print("Body Skills")
+    print(f"Athletics: {athBase}")
+    print(f"Contortionist: {contBase}")
+    print(f"Dance: {danceBase}")
+    print(f"Endurance: {endBase}")
+    print(f"Resist Torture/Drugs: {resistBase}")
+    print(f"Stealth: {sneakBase}")
+    print("----------------------")
+    print("Control Skills")
+    print(f"Drive Land: {landBase}")
+    print(f"Pilot Air: {airBase}")
+    print(f"Pilot Sea: {seaBase}")
+    print(f"Riding: {rideBase}")
+    print("----------------------")
+    print("Education Skills")
+    print(f"Accounting: {accBase}")
+    print(f"Animal Handling: {animBase}")
+    print(f"Bureaucracy: {bureauBase}")
+    print(f"Business: {busiBase}")
+    print(f"Composition: {compBase}")
+    print(f"Criminology: {crimBase}")
+    print(f"Cryptography: {cryptoBase}")
+    print(f"Deduction: {dedBase}")
+    print(f"Education: {eduBase}")
+    print(f"Gambling: {gambleBase}")
+    print(f"Library Search: {libBase}")
+    print(f"Tactics: {tacBase}")
+    print(f"Wilderness Survival: {wildBase}")
+    print("----------------------")
+    print("Melee Fighting Skills")
+    print(f"Brawling: {brawlBase}")
+    print(f"Evasion: {evadeBase}")
+    print(f"Melee Weapons: {meleeBase}")
+    print("----------------------")
+    print("Performance Skills")
+    print(f"Acting: {actBase}")
+    print("----------------------")
+    print("Ranged Weapon Skills")
+    print(f"Archery: {archBase}")
+    print(f"Autofire: {autoBase}")
+    print(f"Handguns: {handBase}")
+    print(f"Heavy Weapons: {heavyBase}")
+    print(f"Shoulder Arms: {shoulderBase}")
+    print("----------------------")
+    print("Social Skills")
+    print(f"Bribery: {bribeBase}")
+    print(f"Conversation: {convBase}")
+    print(f"Human Perception: {huperBase}")
+    print(f"Interrogation: {interBase}")
+    print(f"Persuasion: {persBase}")
+    print(f"Personal Grooming: {groomBase}")
+    print(f"Streetwise: {streetBase}")
+    print(f"Trading: {tradeBase}")
+    print(f"Wardrobe and Style: {styleBase}")
+    print("----------------------")
+    print("Technique Skills")
+    print(f"Air Vehicle Tech: {airtechBase}")
+    print(f"Basic Tech: {basictechBase}")
+    print(f"Cybertech: {cybertechBase}")
+    print(f"Demolitions: {demotechBase}")
+    print(f"Electronics/Security Tech: {sectechBase}")
+    print(f"First Aid: {firstaidBase}")
+    print(f"Forgery: {forgeBase}")
+    print(f"Land Vehicle Tech: {landveBase}")
+    print(f"Paint/Draw/Sculpt: {paintBase}")
+    print(f"Paramedic: {paraBase}")
+    print(f"Photography/Film: {photoBase}")
+    print(f"Pick Lock: {picklockBase}")
+    print(f"Pick Pocket: {pickpocketBase}")
+    print(f"Sea Vehicle Tech: {seaveBase}")
+    print(f"Weaponstech: {weptechBase}")
+    print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+    print("~~~~ Multi-Option Skills ~~~~")
+    print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+    print(f"Language ({langTypeA}): {langBaseA}")
+    print(f"Language ({langTypeB}): {langBaseB}")
+    print(f"Local Expert ({localTypeA}): {langBaseA}")
+    print(f"Martial Arts ({martialTypeA}): {martialBaseA}")
+    print(f"Play Instrument ({playTypeA}): {playBaseA}")
+    print(f"Play Instrument ({playTypeB}): {playBaseB}")
