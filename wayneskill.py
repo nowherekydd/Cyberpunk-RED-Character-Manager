@@ -183,7 +183,7 @@ actBase = actSkill + actLevel + actMisc
 archSkill = waynescore.refScore
 archLevel = 0
 archMisc = 0
-archBase = archSkill + arhcLevel + archMisc
+archBase = archSkill + archLevel + archMisc
 
 autoSkill = waynescore.refScore
 autoLevel = 0
@@ -191,7 +191,7 @@ autoMisc = 0
 autoBase = autoSkill + autoLevel + autoMisc
 
 handSkill = waynescore.refScore
-handLevel = 0
+handLevel = 4
 handMisc = 0
 handBase = handSkill + handLevel + handMisc
 
@@ -227,7 +227,7 @@ interMisc = 0
 interBase = interSkill + interLevel + interMisc
 
 persSkill = waynescore.coolScore
-persLevel = 0
+persLevel = 2
 persMisc = 0
 persBase = persSkill + persLevel + persMisc
 
@@ -244,7 +244,7 @@ streetBase = streetSkill + streetLevel + streetMisc
 tradeSkill = waynescore.coolScore
 tradeLevel = 0
 tradeMisc = 0
-tradeBase = tradeSkill = tradeLevel + tradeMisc
+tradeBase = tradeSkill + tradeLevel + tradeMisc
 
 styleSkill = waynescore.coolScore
 styleLevel = 2
@@ -380,56 +380,102 @@ playMiscB = 0
 playBaseB = playSkillB + playLevelB + playMiscB
 playTypeB = "Vocals"
 
-# Print for debug.
-print("Awareness Skills")
-print(f"Concentration: {concBase}")
-print(f"Conceal/Reveal Object: {conrevBase}")
-print(f"Lip Reading: {lipBase}")
-print(f"Perception: {percBase}")
-print(f"Tracking: {trackBase}")
-print("----------------------")
-print("Body Skills")
-print(f"Athletics: {athBase}")
-print(f"Contortionist: {contBase}")
-print(f"Dance: {danceBase}")
-print(f"Endurance: {endBase}")
-print(f"Resist Torture/Drugs: {resistBase}")
-print(f"Stealth: {sneakBase}")
-print("----------------------")
-print("Control Skills")
-print(f"Drive Land: {landBase}")
-print(f"Pilot Air: {airBase}")
-print(f"Pilot Sea: {seaBase}")
-print(f"Riding: {rideBase}")
-print("----------------------")
-print("Education Skills")
-print(f"Accounting: {accBase}")
-print(f"Animal Handling: {animBase}")
-print(f"Bureaucracy: {bureauBase}")
-print(f"Business: {busiBase}")
-print(f"Composition: {compBase}")
-print(f"Criminology: {crimBase}")
-print(f"Cryptography: {cryptoBase}")
-print(f"Deduction: {dedBase}")
-print(f"Education: {eduBase}")
-print(f"Gambling: {gambleBase}")
-print(f"Library Search: {libBase}")
-print(f"Tactics: {tacBase}")
-print(f"Wilderness Survival: {wildBase}")
-print("----------------------")
-print("Melee Fighting Skills")
-print(f"Brawling: {brawlBase}")
-print(f"Evasion: {evadeBase}")
-print(f"Melee Weapons: {meleeBase}")
-print("----------------------")
-print("Performance Skills")
-print(f"Acting: {actBase}")
-print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-print("~~~~ Multi-Option Skills ~~~~")
-print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-print(f"Language ({langTypeA}): {langBaseA}")
-print(f"Language ({langTypeB}): {langBaseB}")
-print(f"Local Expert ({localTypeA}): {langBaseA}")
-print(f"Martial Arts ({martialTypeA}): {martialBaseA}")
-print(f"Play Instrument ({playTypeA}): {playBaseA}")
-print(f"Play Instrument ({playTypeB}): {playBaseB}")
+# Prompt/print for debug.
+
+debug = True
+
+while debug:
+    debugmode = input("Print skillsheet for debugging? (Y/N) ")
+    
+    if debugmode.upper() == "Y":
+        print("Awareness Skills")
+        print(f"Concentration: {concBase}")
+        print(f"Conceal/Reveal Object: {conrevBase}")
+        print(f"Lip Reading: {lipBase}")
+        print(f"Perception: {percBase}")
+        print(f"Tracking: {trackBase}")
+        print("----------------------")
+        print("Body Skills")
+        print(f"Athletics: {athBase}")
+        print(f"Contortionist: {contBase}")
+        print(f"Dance: {danceBase}")
+        print(f"Endurance: {endBase}")
+        print(f"Resist Torture/Drugs: {resistBase}")
+        print(f"Stealth: {sneakBase}")
+        print("----------------------")
+        print("Control Skills")
+        print(f"Drive Land: {landBase}")
+        print(f"Pilot Air: {airBase}")
+        print(f"Pilot Sea: {seaBase}")
+        print(f"Riding: {rideBase}")
+        print("----------------------")
+        print("Education Skills")
+        print(f"Accounting: {accBase}")
+        print(f"Animal Handling: {animBase}")
+        print(f"Bureaucracy: {bureauBase}")
+        print(f"Business: {busiBase}")
+        print(f"Composition: {compBase}")
+        print(f"Criminology: {crimBase}")
+        print(f"Cryptography: {cryptoBase}")
+        print(f"Deduction: {dedBase}")
+        print(f"Education: {eduBase}")
+        print(f"Gambling: {gambleBase}")
+        print(f"Library Search: {libBase}")
+        print(f"Tactics: {tacBase}")
+        print(f"Wilderness Survival: {wildBase}")
+        print("----------------------")
+        print("Melee Fighting Skills")
+        print(f"Brawling: {brawlBase}")
+        print(f"Evasion: {evadeBase}")
+        print(f"Melee Weapons: {meleeBase}")
+        print("----------------------")
+        print("Performance Skills")
+        print(f"Acting: {actBase}")
+        print("----------------------")
+        print("Ranged Weapon Skills")
+        print(f"Archery: {archBase}")
+        print(f"Autofire: {autoBase}")
+        print(f"Handguns: {handBase}")
+        print(f"Heavy Weapons: {heavyBase}")
+        print(f"Shoulder Arms: {shoulderBase}")
+        print("----------------------")
+        print("Social Skills")
+        print(f"Bribery: {bribeBase}")
+        print(f"Conversation: {convBase}")
+        print(f"Human Perception: {huperBase}")
+        print(f"Interrogation: {interBase}")
+        print(f"Persuasion: {persBase}")
+        print(f"Personal Grooming: {groomBase}")
+        print(f"Streetwise: {streetBase}")
+        print(f"Trading: {tradeBase}")
+        print(f"Wardrobe and Style: {styleBase}")
+        print("----------------------")
+        print("Technique Skills")
+        print(f"Air Vehicle Tech: {airtechBase}")
+        print(f"Basic Tech: {basictechBase}")
+        print(f"Cybertech: {cybertechBase}")
+        print(f"Demolitions: {demotechBase}")
+        print(f"Electronics/Security Tech: {sectechBase}")
+        print(f"First Aid: {firstaidBase}")
+        print(f"Forgery: {forgeBase}")
+        print(f"Land Vehicle Tech: {landveBase}")
+        print(f"Paint/Draw/Sculpt: {paintBase}")
+        print(f"Paramedic: {paraBase}")
+        print(f"Photography/Film: {photoBase}")
+        print(f"Pick Lock: {picklockBase}")
+        print(f"Pick Pocket: {pickpocketBase}")
+        print(f"Sea Vehicle Tech: {seaveBase}")
+        print(f"Weaponstech: {weptechBase}")
+        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+        print("~~~~ Multi-Option Skills ~~~~")
+        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+        print(f"Language ({langTypeA}): {langBaseA}")
+        print(f"Language ({langTypeB}): {langBaseB}")
+        print(f"Local Expert ({localTypeA}): {langBaseA}")
+        print(f"Martial Arts ({martialTypeA}): {martialBaseA}")
+        print(f"Play Instrument ({playTypeA}): {playBaseA}")
+        print(f"Play Instrument ({playTypeB}): {playBaseB}")
+        break
+        
+    else:
+        break
