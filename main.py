@@ -1,4 +1,5 @@
 import random
+import asciiart
 from wayneskill import skillDict
 
 def debugmenu():
@@ -7,6 +8,7 @@ def debugmenu():
         print(f"{category}:")
         for skill, description in skills.items():
             print(f"  {skill}: {description}")
+    input("Press Enter to continue...")
 
 def prompt_user_for_category():
     print("Choose a category of skills:")
@@ -33,26 +35,62 @@ def roll_skill(skill_modifier):
     total = roll + skill_modifier
     return roll, skill_modifier, total
 
+def view_character_sheet():
+    print("Character Sheet:")
+
+def skillroller():
+    while True:
+        chosen_category = prompt_user_for_category()
+        chosen_skill = prompt_user_for_skill(chosen_category)
+        if chosen_skill in skillDict[chosen_category]:
+            skill_modifier = skillDict[chosen_category][chosen_skill]
+        else:
+            skill_modifier = 0
+
+        while True:
+            roll, _, total = roll_skill(skill_modifier)
+            print(f"Rolling for {chosen_skill} in category {chosen_category}...")
+            print(f"Roll: {roll}")
+            print(f"Skill Modifier: {skill_modifier}")
+            print(f"Total: {total}")
+            next_action = input("Choose next action: Roll [a]gain for the same skill, [D]ifferent skill, or [M]ain menu: ").strip().upper()
+
+            if next_action == "A":
+                continue  # Roll again for the same skill
+            elif next_action == "M":
+                return  # Return to main menu
+            elif next_action == "D":
+                break  # Prompt for different skill
+            else:
+                print("Invalid choice. Returning to main menu...")
+                return
+
+def main_menu():
+    print("\nMain Menu:")
+    print("[R]oll for a Skill")
+    print("[V]iew Character Sheet")
+    print("[D]ebug Menu")
+    print("[E]xit")
+    choice = input("Enter your choice: ")
+    return choice
+
 def main():
-    debug_choice = input("Print skillsheet for debugging? (Y/N) ").strip().lower()
-    if debug_choice == 'y':
-        debugmenu()
+    asciiart.mainheader()
+    while True:
+        choice = main_menu().upper()
 
-    chosen_category = prompt_user_for_category()
-    chosen_skill = prompt_user_for_skill(chosen_category)
-    
-    # Retrieve skill modifier from skillDict
-    if chosen_skill in skillDict[chosen_category]:
-        skill_modifier = skillDict[chosen_category][chosen_skill]
-    else:
-        skill_modifier = 0  # Default modifier if not found
-
-    roll, _, total = roll_skill(skill_modifier)
-    
-    print(f"Rolling for {chosen_skill} in category {chosen_category}...")
-    print(f"Roll: {roll}")
-    print(f"Skill Modifier: {skill_modifier}")
-    print(f"Total: {total}")
+        if choice == "E":
+            print("Exiting program...")
+            break
+        elif choice == "R":
+            skillroller()
+        elif choice == "V":
+            view_character_sheet()
+            input("Press Enter to continue...")
+        elif choice == "D":
+            debugmenu()
+        else:
+            print("Invalid choice. Please enter a valid option.")
 
 if __name__ == "__main__":
     main()
