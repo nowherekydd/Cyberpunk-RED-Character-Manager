@@ -12,15 +12,15 @@
 # Import modules.
 
 import math
-import waynescore
-import wayneskill
+import starscore
+import starskill
 import asciiart
 import txtfrm
 
 # Basic char info.
 
-charName = "Wayne Amador"
-charHandle = "Dead Ringer"
+charName = "Astarion Ancunin"
+charHandle = "Starboy"
 charRole = "Rockerboy"
 roleAbility = "Charismatic Impact"
 
@@ -31,16 +31,16 @@ roleAbility = "Charismatic Impact"
 ## HUM = EMP * 10 - max is reduced by 2 per cyber
 
 # HP
-maxHP = 10 + (5 * math.ceil((waynescore.bodyScore + waynescore.willScore)/2))
+maxHP = 10 + (5 * math.ceil((starscore.bodyScore + starscore.willScore)/2))
 sevWound = math.ceil(maxHP / 2)
-deathSave = waynescore.bodyScore
+deathSave = starscore.bodyScore
 
 # Humanity [includes current EMP because based on that]
 # Max HUM Penalty
 cyberCount = 5
 maxHUMPenalty = cyberCount * 2
 
-maxHUM = (10 * waynescore.maxempScore) - maxHUMPenalty
+maxHUM = (10 * starscore.maxempScore) - maxHUMPenalty
 humLoss = 49
 humScore = maxHUM - humLoss
 empScore = math.floor(humScore / 10)

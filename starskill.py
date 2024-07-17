@@ -10,319 +10,319 @@
 # Skillsheet - maybe roll into main character sheet later?
 
 # Import modules.
-import waynescore
+import starscore
 
 # Awareness Skills
-concSkill = waynescore.willScore
+concSkill = starscore.willScore
 concLevel = 2
 concMisc = 0
 concBase = concSkill + concLevel + concMisc
 
-conrevSkill = waynescore.ntlScore
+conrevSkill = starscore.ntlScore
 conrevLevel = 3
 conrevMisc = 0
 conrevBase = conrevSkill + conrevLevel + conrevMisc
 
-lipSkill = waynescore.ntlScore
-lipLevel = 0
+lipSkill = starscore.ntlScore
+lipLevel = 2
 lipMisc = 0
 lipBase = lipSkill + lipLevel + lipMisc
 
-percSkill = waynescore.ntlScore
+percSkill = starscore.ntlScore
 percLevel = 2
 percMisc = 0
 percBase = percSkill + percLevel + percMisc
 
-trackSkill = waynescore.ntlScore
+trackSkill = starscore.ntlScore
 trackLevel = 0
 trackMisc = 0
 trackBase = trackSkill + trackLevel + trackMisc
 
 # Body Skills
-athSkill = waynescore.dexScore
+athSkill = starscore.dexScore
 athLevel = 2
 athMisc = 0
 athBase = athSkill + athLevel + athMisc
 
-contSkill = waynescore.dexScore
+contSkill = starscore.dexScore
 contLevel = 0
 contMisc = 0
 contBase = contSkill + contLevel + contMisc
 
-danceSkill = waynescore.dexScore
+danceSkill = starscore.dexScore
 danceLevel = 0
 danceMisc = 0
 danceBase = danceSkill + danceLevel + danceMisc
 
-endSkill = waynescore.willScore
-endLevel = 0
+endSkill = starscore.willScore
+endLevel = 2
 endMisc = 0
 endBase = endSkill + endLevel + endMisc
 
-resistSkill = waynescore.willScore
-resistLevel = 5
-resistMisc = 0
+resistSkill = starscore.willScore
+resistLevel = 6
+resistMisc = 2
 resistBase = resistSkill + resistLevel + resistMisc
 
-sneakSkill = waynescore.dexScore
-sneakLevel = 2
+sneakSkill = starscore.dexScore
+sneakLevel = 4
 sneakMisc = 0
 sneakBase = sneakSkill + sneakLevel + sneakMisc
 
 # Control Skills
-landSkill = waynescore.refScore
-landLevel = 2
+landSkill = starscore.refScore
+landLevel = 0
 landMisc = 0
 landBase = landSkill + landLevel + landMisc
 
-airSkill = waynescore.refScore
+airSkill = starscore.refScore
 airLevel = 0
 airMisc = 0
 airBase = airSkill + airLevel + airMisc
 
-seaSkill = waynescore.refScore
+seaSkill = starscore.refScore
 seaLevel = 0
 seaMisc = 0
 seaBase = seaSkill + seaLevel + seaMisc
 
-rideSkill = waynescore.refScore
+rideSkill = starscore.refScore
 rideLevel = 0
 rideMisc = 0
 rideBase = rideSkill + rideLevel + rideMisc
 
 # Education Skills
-accSkill = waynescore.ntlScore
+accSkill = starscore.ntlScore
 accLevel = 0
 accMisc = 0
 accBase = accSkill + accLevel + accMisc
 
-animSkill = waynescore.ntlScore
+animSkill = starscore.ntlScore
 animLevel = 0
 animMisc = 0
 animBase = animSkill + animLevel + animMisc
 
-bureauSkill = waynescore.ntlScore
+bureauSkill = starscore.ntlScore
 bureauLevel = 0
 bureauMisc = 0
 bureauBase = bureauSkill + bureauLevel + bureauMisc
 
-busiSkill = waynescore.ntlScore
+busiSkill = starscore.ntlScore
 busiLevel = 0
 busiMisc = 0
 busiBase = busiSkill + busiLevel + busiMisc
 
-compSkill = waynescore.ntlScore
-compLevel = 3
+compSkill = starscore.ntlScore
+compLevel = 0
 compMisc = 0
 compBase = compSkill + compLevel + compMisc
 
-crimSkill = waynescore.ntlScore
+crimSkill = starscore.ntlScore
 crimLevel = 0
 crimMisc = 0
 crimBase = crimSkill + crimLevel + crimMisc
 
-cryptoSkill = waynescore.ntlScore
+cryptoSkill = starscore.ntlScore
 cryptoLevel = 0
 cryptoMisc = 0
 cryptoBase = cryptoSkill + cryptoLevel + cryptoMisc
 
-dedSkill = waynescore.ntlScore
+dedSkill = starscore.ntlScore
 dedLevel = 0
 dedMisc = 0
 dedBase = dedSkill + dedLevel + dedMisc
 
-eduSkill = waynescore.ntlScore
+eduSkill = starscore.ntlScore
 eduLevel = 2
 eduMisc = 0
 eduBase = eduSkill + eduLevel + eduMisc
 
-gambleSkill = waynescore.ntlScore
+gambleSkill = starscore.ntlScore
 gambleLevel = 0
 gambleMisc = 0
 gambleBase = gambleSkill + gambleLevel + gambleMisc
 
-libSkill = waynescore.ntlScore
+libSkill = starscore.ntlScore
 libLevel = 0
 libMisc = 0
 libBase = libSkill + libLevel + libMisc
 
-tacSkill = waynescore.ntlScore
+tacSkill = starscore.ntlScore
 tacLevel = 0
 tacMisc = 0
 tacBase = tacSkill + tacLevel + tacMisc
 
-wildSkill = waynescore.ntlScore
+wildSkill = starscore.ntlScore
 wildLevel = 0
 wildMisc = 0
 wildBase = wildSkill + wildLevel + wildMisc
 
 # Melee Fighting Skills
-brawlSkill = waynescore.dexScore
+brawlSkill = starscore.dexScore
 brawlLevel = 2
 brawlMisc = 0
 brawlBase = brawlSkill + brawlLevel + brawlMisc
 
-evadeSkill = waynescore.dexScore
+evadeSkill = starscore.dexScore
 evadeLevel = 4
 evadeMisc = 0
 evadeBase = evadeSkill + evadeLevel + evadeMisc
 
-meleeSkill = waynescore.dexScore
-meleeLevel = 2
+meleeSkill = starscore.dexScore
+meleeLevel = 6
 meleeMisc = 0
 meleeBase = meleeSkill + meleeLevel + meleeMisc
 
 # Performance Skills
-actSkill = waynescore.coolScore
-actLevel = 0
+actSkill = starscore.coolScore
+actLevel = 6
 actMisc = 0
 actBase = actSkill + actLevel + actMisc
 
 # Ranged Weapon Skills
-archSkill = waynescore.refScore
+archSkill = starscore.refScore
 archLevel = 0
 archMisc = 0
 archBase = archSkill + archLevel + archMisc
 
-autoSkill = waynescore.refScore
+autoSkill = starscore.refScore
 autoLevel = 0
 autoMisc = 0
 autoBase = autoSkill + autoLevel + autoMisc
 
-handSkill = waynescore.refScore
-handLevel = 4
+handSkill = starscore.refScore
+handLevel = 0
 handMisc = 0
 handBase = handSkill + handLevel + handMisc
 
-heavySkill = waynescore.refScore
+heavySkill = starscore.refScore
 heavyLevel = 0
 heavyMisc = 0
 heavyBase = heavySkill + heavyLevel + heavyMisc
 
-shoulderSkill = waynescore.refScore
+shoulderSkill = starscore.refScore
 shoulderLevel = 0
 shoulderMisc = 0
 shoulderBase = shoulderSkill + shoulderLevel + shoulderMisc
 
 # Social Skills
-bribeSkill = waynescore.coolScore
+bribeSkill = starscore.coolScore
 bribeLevel = 0
 bribeMisc = 0
 bribeBase = bribeSkill + bribeLevel + bribeMisc
 
-convSkill = waynescore.empScore
-convLevel = 2
+convSkill = starscore.empScore
+convLevel = 6
 convMisc = 0
 convBase = convSkill + convLevel + convMisc
 
-huperSkill = waynescore.empScore
-huperLevel = 2
+huperSkill = starscore.empScore
+huperLevel = 4
 huperMisc = 0
 huperBase = huperSkill + huperLevel + huperMisc
 
-interSkill = waynescore.coolScore
+interSkill = starscore.coolScore
 interLevel = 0
 interMisc = 0
 interBase = interSkill + interLevel + interMisc
 
-persSkill = waynescore.coolScore
-persLevel = 2
+persSkill = starscore.coolScore
+persLevel = 6
 persMisc = 0
 persBase = persSkill + persLevel + persMisc
 
-groomSkill = waynescore.coolScore
-groomLevel = 4
-groomMisc = 0
+groomSkill = starscore.coolScore
+groomLevel = 6
+groomMisc = 2
 groomBase = groomSkill + groomLevel + groomMisc
 
-streetSkill = waynescore.coolScore
-streetLevel = 3
+streetSkill = starscore.coolScore
+streetLevel = 4
 streetMisc = 0
 streetBase = streetSkill + streetLevel + streetMisc
 
-tradeSkill = waynescore.coolScore
-tradeLevel = 0
+tradeSkill = starscore.coolScore
+tradeLevel = 1
 tradeMisc = 0
 tradeBase = tradeSkill + tradeLevel + tradeMisc
 
-styleSkill = waynescore.coolScore
-styleLevel = 2
-styleMisc = 0
+styleSkill = starscore.coolScore
+styleLevel = 4
+styleMisc = 2
 styleBase = styleSkill + styleLevel + styleMisc
 
 # Tech Skills
-airtechSkill = waynescore.techScore
+airtechSkill = starscore.techScore
 airtechLevel = 0
 airtechMisc = 0
 airtechBase = airtechSkill + airtechLevel + airtechMisc
 
-basictechSkill = waynescore.techScore
-basictechLevel = 2
+basictechSkill = starscore.techScore
+basictechLevel = 0
 basictechMisc = 0
 basictechBase = basictechSkill + basictechLevel + basictechMisc
 
-cybertechSkill = waynescore.techScore
-cybertechLevel = 6
+cybertechSkill = starscore.techScore
+cybertechLevel = 0
 cybertechMisc = 0
 cybertechBase = cybertechSkill + cybertechLevel + cybertechMisc
 
-demotechSkill = waynescore.techScore
+demotechSkill = starscore.techScore
 demotechLevel = 0
 demotechMisc = 0
 demotechBase = demotechSkill + demotechLevel + demotechMisc
 
-sectechSkill = waynescore.techScore
+sectechSkill = starscore.techScore
 sectechLevel = 0
 sectechMisc = 0
 sectechBase = sectechSkill + sectechLevel + sectechMisc
 
-firstaidSkill = waynescore.techScore
+firstaidSkill = starscore.techScore
 firstaidLevel = 2
 firstaidMisc = 0
 firstaidBase = firstaidSkill + firstaidLevel + firstaidMisc
 
-forgeSkill = waynescore.techScore
+forgeSkill = starscore.techScore
 forgeLevel = 0
 forgeMisc = 0
 forgeBase = forgeSkill + forgeLevel + forgeMisc
 
-landveSkill = waynescore.techScore
-landveLevel = 2
+landveSkill = starscore.techScore
+landveLevel = 0
 landveMisc = 0
 landveBase = landveSkill + landveLevel + landveMisc
 
-paintSkill = waynescore.techScore
+paintSkill = starscore.techScore
 paintLevel = 0
 paintMisc = 0
 paintBase = paintSkill + paintLevel + paintMisc
 
-paraSkill = waynescore.techScore
+paraSkill = starscore.techScore
 paraLevel = 0
 paraMisc = 0
 paraBase = paraSkill + paraLevel + paraMisc
 
-photoSkill = waynescore.techScore
+photoSkill = starscore.techScore
 photoLevel = 0
 photoMisc = 0
 photoBase = photoSkill + photoLevel + photoMisc
 
-picklockSkill = waynescore.techScore
-picklockLevel = 0
+picklockSkill = starscore.techScore
+picklockLevel = 2
 picklockMisc = 0
 picklockBase = picklockSkill + picklockLevel + picklockMisc
 
-pickpocketSkill = waynescore.techScore
-pickpocketLevel = 0
+pickpocketSkill = starscore.techScore
+pickpocketLevel = 4
 pickpocketMisc = 0
 pickpocketBase = pickpocketSkill + pickpocketLevel + pickpocketMisc
 
-seaveSkill = waynescore.techScore
+seaveSkill = starscore.techScore
 seaveLevel = 0
 seaveMisc = 0
 seaveBase = seaveSkill + seaveLevel + seaveMisc
 
-weptechSkill = waynescore.techScore
-weptechLevel = 2
+weptechSkill = starscore.techScore
+weptechLevel = 0
 weptechMisc = 0
 weptechBase = weptechSkill + weptechLevel + weptechMisc
 
@@ -333,51 +333,45 @@ weptechBase = weptechSkill + weptechLevel + weptechMisc
 # and must be specialized each time)
 
 ## Language Skills
-langSkillA = waynescore.ntlScore
+langSkillA = starscore.ntlScore
 langLevelA = 2
 langMiscA = 0
 langBaseA = langSkillA + langLevelA + langMiscA
 langTypeA = "Streetslang"
 
-langSkillB = waynescore.ntlScore
+langSkillB = starscore.ntlScore
 langLevelB = 4
 langMiscB = 0
 langBaseB = langSkillB + langLevelB + langMiscB
 langTypeB = "English"
 
 ## Local Expert Skills
-localSkillA = waynescore.ntlScore
+localSkillA = starscore.ntlScore
 localLevelA = 4
 localMiscA = 0
 localBaseA = localSkillA + localLevelA + localMiscA
 localTypeA = "University District"
 
 ## Science Skills
-sciSkillA = waynescore.ntlScore
+sciSkillA = starscore.ntlScore
 sciLevelA = 0
 sciMiscA = 0
 sciBaseA = sciSkillA + sciLevelA + sciMiscA
 sciTypeA = "null"
 
 ## Martial Arts Skills
-martialSkillA = waynescore.dexScore
-martialLevelA = 5
+martialSkillA = starscore.dexScore
+martialLevelA = 0
 martialMiscA = 0
 martialBaseA = martialSkillA + martialLevelA + martialMiscA
-martialTypeA = "Judo"
+martialTypeA = "null"
 
 ## Instrument Skills
-playSkillA = waynescore.techScore
-playLevelA = 4
+playSkillA = starscore.techScore
+playLevelA = 0
 playMiscA = 0
 playBaseA = playSkillA + playLevelA + playMiscA
-playTypeA = "Guitar"
-
-playSkillB = waynescore.techScore
-playLevelB = 4
-playMiscB = 0
-playBaseB = playSkillB + playLevelB + playMiscB
-playTypeB = "Vocals"
+playTypeA = "null"
 
 skillDict = {
     "Awareness Skills": {
@@ -428,7 +422,6 @@ skillDict = {
     "Performance Skills": {
         "Acting": actBase,
         f"Play Instrument ({playTypeA})": playBaseA,
-        f"Play Instrument ({playTypeB})": playBaseB,
         },
     "Ranged Weapon Skills": {
         "Archery": archBase,

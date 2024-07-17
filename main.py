@@ -11,8 +11,8 @@
 
 import random # For dice rolling
 import asciiart # To print out relevant ASCII
-import waynesheet # Character sheet.
-from wayneskill import skillDict # For skill dictionary. Maybe find a way to make it more generic for future plugin?
+import starsheet # Character sheet.
+from starskill import skillDict # For skill dictionary. Maybe find a way to make it more generic for future plugin?
 
 def debugmenu():
     print("Skill Dictionary:")
@@ -94,7 +94,7 @@ def main():
         elif choice == "R":
             skillroller()
         elif choice == "V":
-            waynesheet.charDisplay()
+            starsheet.charDisplay()
             input("Press Enter to continue...")
         elif choice == "D":
             debugmenu()
