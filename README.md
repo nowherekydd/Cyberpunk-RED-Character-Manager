@@ -1,16 +1,13 @@
-       ______      __                                __        ____  __________ 
-      / ____/_  __/ /_  ___  _________  __  ______  / /___    / __ \/ ____/ __ \
-     / /   / / / / __ \/ _ \/ ___/ __ \/ / / / __ \/ //_(_)  / /_/ / __/ / / / /
-    / /___/ /_/ / /_/ /  __/ /  / /_/ / /_/ / / / / ,< _    / _, _/ /___/ /_/ / 
-    \____/\__, /_.___/\___/_/  / .___/\__,_/_/ /_/_/|_(_)  /_/ |_/_____/_____/  
-         /____/               /_/                                               
-
-          Python-based CLI Character Sheet/Roller by nowherekydd // v0d
+# Cyberpunk: RED CLI Character Manager v0dev
+# by James "nowherekydd" Burnham
 
 This is a little pet/passion project that I'm currently working on to add to my Python portfolio. As of right now an executable is not on the horizon, but hopefully once I have more free time I can get to it. If you've got knowledge on Python and know how to edit, feel free to download the source code and run it on your own machine.
 
-Based off of Senjak's RED GSheet... sheet. 
+Senjak's RED GSheet... sheet has been a major resource for me referencing what I need to get done.
 https://docs.google.com/spreadsheets/d/10j2XMfCsnLlROEFHeLCEhE6RJd4ENXOaqfCdsz6nOlo/edit?gid=510767756#gid=510767756
+
+If you want to follow along with the character I'm using as a base:
+https://docs.google.com/spreadsheets/d/1ppxQDmYei8Tu7lkZOBDWOZPvqtLRqGihsA42Y6ahZ5g/edit?usp=sharing
 
 Current features:
 - Skill check menu divided by category
