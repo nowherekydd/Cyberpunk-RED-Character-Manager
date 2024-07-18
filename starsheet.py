@@ -50,20 +50,22 @@ empScore = math.floor(humScore / 10)
 charHeader = f"{charName} aka " + txtfrm.bold(f"{charHandle}")
 charhCenter = charHeader.center(85)
 
-charSkills = txtfrm.bold(f"{starscore.ntlScore}") + " INT // " + txtfrm.bold(f"{starscore.refScore}") + " REF // " + txtfrm.bold(f"{starscore.dexScore}") + " DEX // " + txtfrm.bold(f"{starscore.techScore}") + " TECH // " + txtfrm.bold(f"{starscore.willScore}") + " WILL // " + txtfrm.bold(f"{starscore.moveScore}") + " MOVE // " + txtfrm.bold(f"{starscore.bodyScore}") + " INT // " + txtfrm.bold(f"{starscore.empScore}") + "/" + txtfrm.bold(f"{starscore.maxempScore}") + " EMP // " + txtfrm.bold(f"{starscore.maxluckScore}") + " LUCK"
+charSkills = " " + txtfrm.bold(f"{starscore.ntlScore}") + " INT // " + txtfrm.bold(f"{starscore.refScore}") + " REF // " + txtfrm.bold(f"{starscore.dexScore}") + " DEX // " + txtfrm.bold(f"{starscore.techScore}") + " TECH // " + txtfrm.bold(f"{starscore.willScore}") + " WILL // " + txtfrm.bold(f"{starscore.moveScore}") + " MOVE // " + txtfrm.bold(f"{starscore.bodyScore}") + " INT // " + txtfrm.bold(f"{starscore.empScore}") + "/" + txtfrm.bold(f"{starscore.maxempScore}") + " EMP // " + txtfrm.bold(f"{starscore.maxluckScore}") + " LUCK"
 charskCenter = charSkills.center(150)
 
 # Charsheet format here.
 
 def charDisplay():
     asciiart.charsheetheader()
+    asciiart.charheaderdiv()
+    txtfrm.linebreak()
     asciiart.charsheetdiv()
     print(charhCenter)
     asciiart.charsheetdiv()
+    txtfrm.linebreak()
     print(charskCenter)
     txtfrm.linebreak()
 
     
-# Prints out charsheet on run for debug/testing.
-
-charDisplay()
+# Prints out charsheet on run for debug/testing. Comment out when not in use.
+# charDisplay()

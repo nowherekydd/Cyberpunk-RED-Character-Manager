@@ -12,9 +12,13 @@
 import random # For dice rolling
 import asciiart # To print out relevant ASCII
 import starsheet # Character sheet.
+import time # For time delay between end and console clearing.
 from starskill import skillDict # For skill dictionary. Maybe find a way to make it more generic for future plugin?
 
+clear = lambda: print("\033c", end="", flush=True)
+
 def debugmenu():
+    clear()
     print("Skill Dictionary:")
     for category, skills in skillDict.items():
         print(f"{category}:")
@@ -23,6 +27,7 @@ def debugmenu():
     input("Press Enter to continue...")
 
 def prompt_user_for_category():
+    clear()
     print("Choose a category of skills:")
     categories = list(skillDict.keys())
     for i, category in enumerate(categories, start=1):
@@ -33,6 +38,7 @@ def prompt_user_for_category():
     return chosen_category
 
 def prompt_user_for_skill(category):
+    clear()
     print(f"Choose a skill from the category '{category}':")
     skill_list = list(skillDict[category].keys())
     for i, skill in enumerate(skill_list, start=1):
@@ -84,19 +90,33 @@ def main_menu():
     return choice
 
 def main():
-    asciiart.mainheader()
     while True:
+        clear()
+        asciiart.mainheader()
         choice = main_menu().upper()
 
         if choice == "E":
-            print("Exiting program...")
+            clear()
+            print("Exiting program in 3...")
+            time.sleep(1)
+            clear()
+            print("Exiting program in 2...")
+            time.sleep(1)
+            clear()
+            print("Exiting program in 1...")
+            time.sleep(1)
+            clear()
             break
         elif choice == "R":
+            clear()
             skillroller()
         elif choice == "V":
+            clear()
             starsheet.charDisplay()
             input("Press Enter to continue...")
+            clear()
         elif choice == "D":
+            clear()
             debugmenu()
         else:
             print("Invalid choice. Please enter a valid option.")

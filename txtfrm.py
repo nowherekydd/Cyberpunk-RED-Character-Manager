@@ -45,7 +45,15 @@ reset = "\033[0m"
 def rgb(r, g, b):
     return f"\033[38;2;{r};{g};{b}m"
 
+def bg_rgb(r, g, b):
+    return f"\033[48;2;{r};{g};{b}m"
+
 # RGB codes.
+
+# Background colors.
+bkblack = bg_rgb(0, 0, 0)
+bkwhite = bg_rgb(255, 255, 255)
+
 ## Basic rainbow
 red = rgb(255, 0, 0)
 orange = rgb(255, 128, 0)
@@ -79,6 +87,14 @@ brown = rgb(165, 42, 42) #
 khaki = rgb(240, 230, 140) #
 
 # Final formatting.
+## Background
+
+def bgblack(text):
+    return bkblack + text + reset
+
+def bgwhite(text):
+    return bkwhite + text + reset
+
 ## Basic
 def cred(text):
     return red + text + reset
