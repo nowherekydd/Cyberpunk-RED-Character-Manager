@@ -89,6 +89,14 @@ khaki = rgb(240, 230, 140) #
 # Final formatting.
 ## Background
 
+# Special formatting for roller.
+
+def rollerheader(text):
+    return bkblack + red + text + reset
+
+def rollermenu(text):
+    return bkblack + text + reset
+
 def bgblack(text):
     return bkblack + text + reset
 

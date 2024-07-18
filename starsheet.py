@@ -56,7 +56,7 @@ charskCenter = charSkills.center(150)
 # Charsheet format here.
 
 def charDisplay():
-    asciiart.charsheetheader()
+    asciiart.mainheaderTest2()
     asciiart.charheaderdiv()
     txtfrm.linebreak()
     asciiart.charsheetdiv()

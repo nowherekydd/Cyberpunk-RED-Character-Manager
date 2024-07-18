@@ -9,14 +9,32 @@
 # by nowherekydd // v0d
 # Main Program
 
+################### Non-Custom Modules #######################
 import random # For dice rolling
+import time # For time delay between end and console clearing
+import os # To get console width
+##############################################################
 import asciiart # To print out relevant ASCII
-import starsheet # Character sheet.
-import time # For time delay between end and console clearing.
+import starsheet # Character sheet
+import txtfrm # Because I'm a fucking idiot and forgot this
 from starskill import skillDict # For skill dictionary. Maybe find a way to make it more generic for future plugin?
 
+# Clears console
 clear = lambda: print("\033c", end="", flush=True)
 
+# Grabs terminal width
+def get_terminal_width():
+    try:
+        return os.get_terminal_size().columns
+    except OSError:
+        # Default to 80 if getting terminal size fails
+        return 80
+
+# Centers text
+def center_text(text, width):
+    return text.center(width)
+
+# Menu McMenuface
 def debugmenu():
     clear()
     print("Skill Dictionary:")
@@ -81,18 +99,24 @@ def skillroller():
                 return
 
 def main_menu():
-    print("\nMain Menu:")
-    print("[R]oll for a Skill")
-    print("[V]iew Character Sheet")
-    print("[D]ebug Menu")
-    print("[E]xit")
-    choice = input("Enter your choice: ")
+    width = get_terminal_width()
+    menu_text = [
+        "Main Menu:",
+        r"[R]oll for a Skill // [V]iew Character Sheet // [D]ebug // [E]xit",
+        "Enter your choice below."
+    ]
+
+    for line in menu_text:
+        print(txtfrm.rollermenu(center_text(line, width)))
+
+    choice = input()
+
     return choice
 
 def main():
     while True:
         clear()
-        asciiart.mainheader()
+        asciiart.mainHeader()
         choice = main_menu().upper()
 
         if choice == "E":
