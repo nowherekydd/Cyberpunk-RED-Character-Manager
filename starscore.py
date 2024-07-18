@@ -22,4 +22,5 @@ bodyScore = 5
 maxempScore = 7
 maxluckScore = 5
 
+luckScore = maxluckScore - 0
 empScore = maxempScore - 4

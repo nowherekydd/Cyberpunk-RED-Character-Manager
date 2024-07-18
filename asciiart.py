@@ -27,9 +27,16 @@ def center_text(text, width):
 # Non-breaking space
 nbsp = "\u00A0"
 
-def charDiv():
+def headerDiv():
     width = get_terminal_width()
     print(txtfrm.rollerheader(center_text(nbsp, width)))
+
+def charsDiv():
+    width = get_terminal_width()
+    charDiv = center_text("▬▬ι═════════════════════════════════════════ι▬▬", width)
+    print(charDiv)
+
+#############################################################################################  
 
 def mainHeader():
     width = get_terminal_width()
@@ -43,22 +50,25 @@ def mainHeader():
     r"Python-based CLI Character Manager by nowherekydd // v0d"
     ]
 
-    charDiv()
+    headerDiv()
     for line in mainheaderASCII:
         print(txtfrm.rollerheader(center_text(line, width)))
-    charDiv()
+    headerDiv()
     
-#############################################################################################    
-def charsheetheader():
-    print(txtfrm.bgblack(txtfrm.cred(r"""                                                                                      
-       ______      __                                __        ____  __________       
-      / ____/_  __/ /_  ___  _________  __  ______  / /___    / __ \/ ____/ __ \      
-     / /   / / / / __ \/ _ \/ ___/ __ \/ / / / __ \/ //_(_)  / /_/ / __/ / / / /      
-    / /___/ /_/ / /_/ /  __/ /  / /_/ / /_/ / / / / ,< _    / _, _/ /___/ /_/ /       
-    \____/\__, /_.___/\___/_/  / .___/\__,_/_/ /_/_/|_(_)  /_/ |_/_____/_____/        
-         /____/               /_/                                                     """)))
+#############################################################################################
 
-def charsheetdiv():
-    chardiv = "▬▬ι═════════════════════════════════════════ι▬▬"
-    chardCenter = chardiv.center(82)
-    print(chardCenter)
+def charsheetheader():
+    width = get_terminal_width()
+    charheaderASCII = [
+    r"______      __                                __        ____  __________",
+    r"  / ____/_  __/ /_  ___  _________  __  ______  / /___    / __ \/ ____/ __ \ ",
+    r" / /   / / / / __ \/ _ \/ ___/ __ \/ / / / __ \/ //_(_)  / /_/ / __/ / / / / ",
+    r"/ /___/ /_/ / /_/ /  __/ /  / /_/ / /_/ / / / / ,< _    / _, _/ /___/ /_/ /  ",
+    r"\____/\__, /_.___/\___/_/  / .___/\__,_/_/ /_/_/|_(_)  /_/ |_/_____/_____/   ",
+    r"     /____/               /_/                                                "
+    ]
+
+    headerDiv()
+    for line in charheaderASCII:
+        print(txtfrm.rollerheader(center_text(line, width)))
+    headerDiv()

@@ -39,8 +39,6 @@ def linebreak():
 
 ### Colors ###
 
-reset = "\033[0m"
-
 # Generates code based off RGB.
 def rgb(r, g, b):
     return f"\033[38;2;{r};{g};{b}m"
@@ -49,6 +47,12 @@ def bg_rgb(r, g, b):
     return f"\033[48;2;{r};{g};{b}m"
 
 # RGB codes.
+
+# Testing
+
+reset = "\033[0m"
+backTest = "\033[48;2;0;0;0m"
+boldTest = "\033[1m"
 
 # Background colors.
 bkblack = bg_rgb(0, 0, 0)
