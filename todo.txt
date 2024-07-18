@@ -1,0 +1,4 @@
+- Finish charsheet
+- Debug menu beautification
+- Condensing of sheets so that there's not so many files
+- Cry
