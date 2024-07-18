@@ -108,4 +108,4 @@ def charDisplay():
 
     
 # Prints out charsheet on run for debug/testing. Comment out when not in use.
-charDisplay()
+# charDisplay()

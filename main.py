@@ -30,9 +30,57 @@ def get_terminal_width():
         # Default to 80 if getting terminal size fails
         return 80
 
+# Defines invalid choice. Note - does not include returning to main. Keep that in the menu thing.
+
+def invalid():
+    width = get_terminal_width()
+    clear()
+    asciiart.headerDiv()
+    print(txtfrm.rollermenu(center_text("Invalid choice. Returning to main menu in 3...", width)))
+    asciiart.headerDiv()
+    time.sleep(1)
+    clear()
+    asciiart.headerDiv()
+    print(txtfrm.rollermenu(center_text("Invalid choice. Returning to main menu in 2...", width)))
+    asciiart.headerDiv()
+    time.sleep(1)
+    clear()
+    asciiart.headerDiv()
+    print(txtfrm.rollermenu(center_text("Invalid choice. Returning to main menu in 1...", width)))
+    asciiart.headerDiv()
+    time.sleep(1)
+
+# Defines end prog
+
+def endprog():
+    width = get_terminal_width()
+    clear()
+    asciiart.headerDiv()
+    print(txtfrm.rollermenu(center_text("Exiting program in 3...", width)))
+    asciiart.headerDiv()
+    time.sleep(1)
+    clear()
+    asciiart.headerDiv()
+    print(txtfrm.rollermenu(center_text("Exiting program in 2...", width)))
+    asciiart.headerDiv()
+    time.sleep(1)
+    clear()
+    asciiart.headerDiv()
+    print(txtfrm.rollermenu(center_text("Exiting program in 1...", width)))
+    asciiart.headerDiv()
+    time.sleep(1)
+    clear()
+
 # Centers text
 def center_text(text, width):
     return text.center(width)
+
+def is_numeric(input_str):
+    try:
+        int(input_str)  # Use int() if you want to check for integer specifically
+        return True
+    except ValueError:
+        return False
 
 # Menu McMenuface
 def debugmenu():
@@ -45,26 +93,53 @@ def debugmenu():
     input("Press Enter to continue...")
 
 def prompt_user_for_category():
+    width = get_terminal_width()
     clear()
-    print("Choose a category of skills:")
     categories = list(skillDict.keys())
-    for i, category in enumerate(categories, start=1):
-        print(f"{i}. {category}")
 
-    choice = int(input("Enter the number of the category: "))
-    chosen_category = categories[choice - 1]
-    return chosen_category
+    asciiart.headerDiv()
+    print(txtfrm.rollermenu(center_text(f"Choose a category.", width)))
+    asciiart.headerDiv()
+
+    for i, category in enumerate(categories, start=1):
+        print(txtfrm.rollermenu(center_text(f"{i}. {category}", width)))
+
+    asciiart.headerDiv()
+
+    choice = int(input())
+
+    while True:
+        if is_numeric(choice) == True:
+            chosen_category = categories[choice - 1]
+            return chosen_category
+
+        else:
+            invalid()
+            break
 
 def prompt_user_for_skill(category):
     clear()
-    print(f"Choose a skill from the category '{category}':")
+    width = get_terminal_width()
+    asciiart.headerDiv()
+    print(txtfrm.rollermenu(center_text(f"Choose a skill from {category}.", width)))
+    asciiart.headerDiv()
     skill_list = list(skillDict[category].keys())
     for i, skill in enumerate(skill_list, start=1):
-        print(f"{i}. {skill}")
+        print(txtfrm.rollermenu(center_text(f"{i}. {skill}", width)))
+    
 
-    choice = int(input("Enter the number of the skill: "))
-    chosen_skill = skill_list[choice - 1]
-    return chosen_skill
+    asciiart.headerDiv()
+
+    choice = int(input())
+    
+    while True:
+        if is_numeric(choice) == True:
+         chosen_skill = skill_list[choice - 1]
+         return chosen_skill
+
+        else:
+            invalid()
+            break
 
 def roll_skill(skill_modifier):
     roll = random.randint(1, 10)
@@ -73,6 +148,7 @@ def roll_skill(skill_modifier):
 
 def skillroller():
     while True:
+        width = get_terminal_width()
         chosen_category = prompt_user_for_category()
         chosen_skill = prompt_user_for_skill(chosen_category)
         if chosen_skill in skillDict[chosen_category]:
@@ -80,22 +156,42 @@ def skillroller():
         else:
             skill_modifier = 0
 
+        rerollCount = 0
+        
         while True:
             roll, _, total = roll_skill(skill_modifier)
-            print(f"Rolling for {chosen_skill} in category {chosen_category}...")
-            print(f"Roll: {roll}")
-            print(f"Skill Modifier: {skill_modifier}")
-            print(f"Total: {total}")
-            next_action = input("Choose next action: Roll [a]gain for the same skill, [D]ifferent skill, or [M]ain menu: ").strip().upper()
 
-            if next_action == "A":
+            rollResult = [
+                f"Rolling for {chosen_skill} in category {chosen_category}...",
+                f"Roll: {roll}",
+                f"Skill Modifier: {skill_modifier}",
+            ]
+
+            clear()
+            asciiart.headerDiv()
+
+            for line in rollResult:
+                print(txtfrm.rollermenu(center_text(line, width)))
+                asciiart.headerDiv()
+            
+            print(txtfrm.rollermenu(txtfrm.bold(center_text(f"Total: {total}", width))))
+            asciiart.headerDiv()
+
+            print(txtfrm.rollermenu(center_text(f"Choose next action: Roll [a]gain for the same skill (rerolled {rerollCount} time(s)), [D]ifferent skill, or [M]ain menu", width)))
+
+            asciiart.headerDiv()
+
+            nextAction = input().strip().upper()
+
+            if nextAction == "A":
+                rerollCount += 1
                 continue  # Roll again for the same skill
-            elif next_action == "M":
+            elif nextAction == "M":
                 return  # Return to main menu
-            elif next_action == "D":
+            elif nextAction == "D":
                 break  # Prompt for different skill
             else:
-                print("Invalid choice. Returning to main menu...")
+                invalid()
                 return
 
 def main_menu():
@@ -108,6 +204,8 @@ def main_menu():
 
     for line in menu_text:
         print(txtfrm.rollermenu(center_text(line, width)))
+    
+    asciiart.headerDiv()
 
     choice = input()
 
@@ -120,30 +218,25 @@ def main():
         choice = main_menu().upper()
 
         if choice == "E":
-            clear()
-            print("Exiting program in 3...")
-            time.sleep(1)
-            clear()
-            print("Exiting program in 2...")
-            time.sleep(1)
-            clear()
-            print("Exiting program in 1...")
-            time.sleep(1)
-            clear()
+            endprog()
             break
         elif choice == "R":
             clear()
             skillroller()
         elif choice == "V":
+            width = get_terminal_width()
             clear()
             starsheet.charDisplay()
-            input("Press Enter to continue...")
+            print(txtfrm.rollermenu(center_text("Press Enter to return to the main menu...", width)))
+            asciiart.headerDiv()
+            input()
             clear()
         elif choice == "D":
             clear()
             debugmenu()
         else:
-            print("Invalid choice. Please enter a valid option.")
+            invalid()
+            continue
 
 if __name__ == "__main__":
     main()
