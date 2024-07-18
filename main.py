@@ -17,7 +17,7 @@ import os # To get console width
 import asciiart # To print out relevant ASCII
 import starsheet # Character sheet
 import txtfrm # Because I'm a fucking idiot and forgot this
-from starskill import skillDict # For skill dictionary. Maybe find a way to make it more generic for future plugin?
+##############################################################
 
 # Clears console
 clear = lambda: print("\033c", end="", flush=True)
@@ -72,21 +72,16 @@ def endprog():
     clear()
 
 # Centers text
+
 def center_text(text, width):
     return text.center(width)
 
-def is_numeric(input_str):
-    try:
-        int(input_str)  # Use int() if you want to check for integer specifically
-        return True
-    except ValueError:
-        return False
-
 # Menu McMenuface
+
 def debugmenu():
     clear()
     print("Skill Dictionary:")
-    for category, skills in skillDict.items():
+    for category, skills in starsheet.skillDict.items():
         print(f"{category}:")
         for skill, description in skills.items():
             print(f"  {skill}: {description}")
@@ -95,7 +90,7 @@ def debugmenu():
 def prompt_user_for_category():
     width = get_terminal_width()
     clear()
-    categories = list(skillDict.keys())
+    categories = list(starsheet.skillDict.keys())
 
     asciiart.headerDiv()
     print(txtfrm.rollermenu(center_text(f"Choose a category.", width)))
@@ -108,22 +103,13 @@ def prompt_user_for_category():
 
     choice = int(input())
 
-    while True:
-        if is_numeric(choice) == True:
-            chosen_category = categories[choice - 1]
-            return chosen_category
-
-        else:
-            invalid()
-            break
-
 def prompt_user_for_skill(category):
     clear()
     width = get_terminal_width()
     asciiart.headerDiv()
     print(txtfrm.rollermenu(center_text(f"Choose a skill from {category}.", width)))
     asciiart.headerDiv()
-    skill_list = list(skillDict[category].keys())
+    skill_list = list(starsheet.skillDict[category].keys())
     for i, skill in enumerate(skill_list, start=1):
         print(txtfrm.rollermenu(center_text(f"{i}. {skill}", width)))
     
@@ -131,15 +117,6 @@ def prompt_user_for_skill(category):
     asciiart.headerDiv()
 
     choice = int(input())
-    
-    while True:
-        if is_numeric(choice) == True:
-         chosen_skill = skill_list[choice - 1]
-         return chosen_skill
-
-        else:
-            invalid()
-            break
 
 def roll_skill(skill_modifier):
     roll = random.randint(1, 10)
@@ -151,8 +128,8 @@ def skillroller():
         width = get_terminal_width()
         chosen_category = prompt_user_for_category()
         chosen_skill = prompt_user_for_skill(chosen_category)
-        if chosen_skill in skillDict[chosen_category]:
-            skill_modifier = skillDict[chosen_category][chosen_skill]
+        if chosen_skill in starsheet.skillDict[chosen_category]:
+            skill_modifier = starsheet.skillDict[chosen_category][chosen_skill]
         else:
             skill_modifier = 0
 
@@ -196,15 +173,11 @@ def skillroller():
 
 def main_menu():
     width = get_terminal_width()
-    menu_text = [
-        "Main Menu:",
-        r"[R]oll for a Skill // [V]iew Character Sheet // [D]ebug // [E]xit",
-        "Enter your choice below."
-    ]
 
-    for line in menu_text:
-        print(txtfrm.rollermenu(center_text(line, width)))
-    
+    print(txtfrm.rollermenu(center_text("Main Menu:", width)))
+    print(txtfrm.rollermenu(center_text(r"[R]oll for a Skill // [V]iew Character Sheet // [D]ebug // [E]xit", width)))
+    asciiart.headerDiv()
+    print(txtfrm.rollermenu(center_text("Enter your choice below.", width)))
     asciiart.headerDiv()
 
     choice = input()
