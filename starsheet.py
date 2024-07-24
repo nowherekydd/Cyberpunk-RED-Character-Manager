@@ -652,22 +652,22 @@ nbsp = "\u00A0" # Spacer
 
 # Defines score display so that charScores isn't ball-bustingly long
 
-charSPACE = center_text(nbsp, 42)
-charEND = center_text(nbsp, 43)
-charINT = txtfrm.bold(center_text(f"{ntlScore}", 3)) + center_text("INT //", 6)
-charREF = txtfrm.bold(center_text(f"{refScore}", 3)) + center_text("REF //", 6)
-charDEX = txtfrm.bold(center_text(f"{dexScore}", 3)) + center_text("DEX //", 6)
-charTECH = txtfrm.bold(center_text(f"{techScore}", 3)) + center_text("TECH //", 7)
-charCOOL = txtfrm.bold(center_text(f"{coolScore}", 3)) + center_text("COOL //", 7)
-charWILL = txtfrm.bold(center_text(f"{willScore}", 3)) + center_text("WILL //", 7)
-charMOVE = txtfrm.bold(center_text(f"{moveScore}", 3)) + center_text("MOVE //", 7)
-charBODY = txtfrm.bold(center_text(f"{bodyScore}", 3)) + center_text("BODY //", 7)
-charEMP = txtfrm.bold(center_text(f"{empScore}", 3)) + center_text(f"/ {maxempScore}", 4) + center_text("EMP //", 7)
-charLUCK = txtfrm.bold(center_text(f"{luckScore}", 3)) + center_text(f"/ {maxluckScore}", 4) + center_text("LUCK", 7)
+charSPACE = txtfrm.rollerheader(center_text(nbsp, 42))
+charEND = txtfrm.rollerheader(center_text(nbsp, 43))
+charINT = txtfrm.rollermenu(txtfrm.bold(center_text(f"{ntlScore}", 3))) + txtfrm.rollermenu(center_text("INT //", 6))
+charREF = txtfrm.rollermenu(txtfrm.bold(center_text(f"{refScore}", 3))) + txtfrm.rollermenu(center_text("REF //", 6))
+charDEX = txtfrm.rollermenu(txtfrm.bold(center_text(f"{dexScore}", 3))) + txtfrm.rollermenu(center_text("DEX //", 6))
+charTECH = txtfrm.rollermenu(txtfrm.bold(center_text(f"{techScore}", 3))) + txtfrm.rollermenu(center_text("TECH //", 7))
+charCOOL = txtfrm.rollermenu(txtfrm.bold(center_text(f"{coolScore}", 3))) + txtfrm.rollermenu(center_text("COOL //", 7))
+charWILL = txtfrm.rollermenu(txtfrm.bold(center_text(f"{willScore}", 3))) + txtfrm.rollermenu(center_text("WILL //", 7))
+charMOVE = txtfrm.rollermenu(txtfrm.bold(center_text(f"{moveScore}", 3))) + txtfrm.rollermenu(center_text("MOVE //", 7))
+charBODY = txtfrm.rollermenu(txtfrm.bold(center_text(f"{bodyScore}", 3))) + txtfrm.rollermenu(center_text("BODY //", 7))
+charEMP = txtfrm.rollermenu(txtfrm.bold(center_text(f"{empScore}", 3))) + txtfrm.rollermenu(center_text(f"/ {maxempScore}", 4)) + txtfrm.rollermenu(center_text("EMP //", 7))
+charLUCK = txtfrm.rollermenu(txtfrm.bold(center_text(f"{luckScore}", 3))) + txtfrm.rollermenu(center_text(f"/ {maxluckScore}", 4)) + txtfrm.rollermenu(center_text("LUCK", 7))
 
 def charHead():
-    print(center_text(f"{charName} aka", width))
-    print(txtfrm.bold(center_text(charHandle, width)))
+    print(txtfrm.rollermenu(center_text(f"{charName} aka", width)))
+    print(txtfrm.bold(txtfrm.rollermenu(center_text(charHandle, width))))
 
 def charScores():
     print(charSPACE + charINT + charREF + charDEX + charTECH + charCOOL + charWILL + charMOVE + charBODY + charEMP + charLUCK + charEND)
