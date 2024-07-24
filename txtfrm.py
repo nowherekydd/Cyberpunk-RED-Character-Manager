@@ -54,10 +54,6 @@ reset = "\033[0m"
 backTest = "\033[48;2;0;0;0m"
 boldTest = "\033[1m"
 
-# Background colors.
-bkblack = bg_rgb(0, 0, 0)
-bkwhite = bg_rgb(255, 255, 255)
-
 ## Basic rainbow
 red = rgb(255, 0, 0)
 orange = rgb(255, 128, 0)
@@ -91,21 +87,6 @@ brown = rgb(165, 42, 42) #
 khaki = rgb(240, 230, 140) #
 
 # Final formatting.
-## Background
-
-# Special formatting for roller.
-
-def rollerheader(text):
-    return bkblack + red + text + reset
-
-def rollermenu(text):
-    return bkblack + text + reset
-
-def bgblack(text):
-    return bkblack + text + reset
-
-def bgwhite(text):
-    return bkwhite + text + reset
 
 ## Basic
 def cred(text):
