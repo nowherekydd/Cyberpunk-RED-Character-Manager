@@ -10,13 +10,13 @@
 # Main Program
 
 ################### Non-Custom Modules #######################
-import random  # For dice rolling
-import time  # For time delay between end and console clearing
-import os  # To get console width
+import random # For dice rolling
+import time # For time delay between end and console clearing
+import os # To get console width
 ##############################################################
-import asciiart  # To print out relevant ASCII
-import starsheet  # Character sheet
-import txtfrm  # Because I'm a fucking idiot and forgot this
+import asciiart # To print out relevant ASCII
+import starsheet # Character sheet
+import txtfrm # Because I'm a fucking idiot and forgot this
 ##############################################################
 
 # Clears console
@@ -30,27 +30,25 @@ def get_terminal_width():
         # Default to 80 if getting terminal size fails
         return 80
 
-
 # Defines invalid choice. Note - does not include returning to main. Keep that in the menu thing.
 
 def invalid():
     width = get_terminal_width()
     clear()
     asciiart.headerDiv()
-    print(center_text("Invalid choice. Returning to main menu in 3...", width))
+    print(txtfrm.rollermenu(center_text("Invalid choice. Returning to main menu in 3...", width)))
     asciiart.headerDiv()
     time.sleep(1)
     clear()
     asciiart.headerDiv()
-    print(center_text("Invalid choice. Returning to main menu in 2...", width))
+    print(txtfrm.rollermenu(center_text("Invalid choice. Returning to main menu in 2...", width)))
     asciiart.headerDiv()
     time.sleep(1)
     clear()
     asciiart.headerDiv()
-    print(center_text("Invalid choice. Returning to main menu in 1...", width))
+    print(txtfrm.rollermenu(center_text("Invalid choice. Returning to main menu in 1...", width)))
     asciiart.headerDiv()
     time.sleep(1)
-
 
 # Defines end prog
 
@@ -58,27 +56,25 @@ def endprog():
     width = get_terminal_width()
     clear()
     asciiart.headerDiv()
-    print(center_text("Exiting program in 3...", width))
+    print(txtfrm.rollermenu(center_text("Exiting program in 3...", width)))
     asciiart.headerDiv()
     time.sleep(1)
     clear()
     asciiart.headerDiv()
-    print(center_text("Exiting program in 2...", width))
+    print(txtfrm.rollermenu(center_text("Exiting program in 2...", width)))
     asciiart.headerDiv()
     time.sleep(1)
     clear()
     asciiart.headerDiv()
-    print(center_text("Exiting program in 1...", width))
+    print(txtfrm.rollermenu(center_text("Exiting program in 1...", width)))
     asciiart.headerDiv()
     time.sleep(1)
     clear()
-
 
 # Centers text
 
 def center_text(text, width):
     return text.center(width)
-
 
 # Menu McMenuface
 
@@ -91,44 +87,41 @@ def debugmenu():
             print(f"  {skill}: {description}")
     input("Press Enter to continue...")
 
-
 def prompt_user_for_category():
     width = get_terminal_width()
     clear()
     categories = list(starsheet.skillDict.keys())
 
     asciiart.headerDiv()
-    print(center_text(f"Choose a category.", width))
+    print(txtfrm.rollermenu(center_text(f"Choose a category.", width)))
     asciiart.headerDiv()
 
     for i, category in enumerate(categories, start=1):
-        print(center_text(f"{i}. {category}", width))
+        print(txtfrm.rollermenu(center_text(f"{i}. {category}", width)))
 
     asciiart.headerDiv()
 
     choice = int(input())
-
 
 def prompt_user_for_skill(category):
     clear()
     width = get_terminal_width()
     asciiart.headerDiv()
-    print(center_text(f"Choose a skill from {category}.", width))
+    print(txtfrm.rollermenu(center_text(f"Choose a skill from {category}.", width)))
     asciiart.headerDiv()
     skill_list = list(starsheet.skillDict[category].keys())
     for i, skill in enumerate(skill_list, start=1):
-        print(center_text(f"{i}. {skill}", width))
+        print(txtfrm.rollermenu(center_text(f"{i}. {skill}", width)))
+    
 
     asciiart.headerDiv()
 
     choice = int(input())
 
-
 def roll_skill(skill_modifier):
     roll = random.randint(1, 10)
     total = roll + skill_modifier
     return roll, skill_modifier, total
-
 
 def skillroller():
     while True:
@@ -141,7 +134,7 @@ def skillroller():
             skill_modifier = 0
 
         rerollCount = 0
-
+        
         while True:
             roll, _, total = roll_skill(skill_modifier)
 
@@ -155,13 +148,13 @@ def skillroller():
             asciiart.headerDiv()
 
             for line in rollResult:
-                print(center_text(line, width))
+                print(txtfrm.rollermenu(center_text(line, width)))
                 asciiart.headerDiv()
-
-            print(txtfrm.bold(center_text(f"Total: {total}", width)))
+            
+            print(txtfrm.rollermenu(txtfrm.bold(center_text(f"Total: {total}", width))))
             asciiart.headerDiv()
 
-            print(center_text(f"Choose next action: Roll [a]gain for the same skill (rerolled {rerollCount} time(s)), [D]ifferent skill, or [M]ain menu", width))
+            print(txtfrm.rollermenu(center_text(f"Choose next action: Roll [a]gain for the same skill (rerolled {rerollCount} time(s)), [D]ifferent skill, or [M]ain menu", width)))
 
             asciiart.headerDiv()
 
@@ -178,20 +171,18 @@ def skillroller():
                 invalid()
                 return
 
-
 def main_menu():
     width = get_terminal_width()
 
-    print(center_text("Main Menu:", width))
-    print(center_text(r"[R]oll for a Skill // [V]iew Character Sheet // [D]ebug // [E]xit", width))
+    print(txtfrm.rollermenu(center_text("Main Menu:", width)))
+    print(txtfrm.rollermenu(center_text(r"[R]oll for a Skill // [V]iew Character Sheet // [D]ebug // [E]xit", width)))
     asciiart.headerDiv()
-    print(center_text("Enter your choice below.", width))
+    print(txtfrm.rollermenu(center_text("Enter your choice below.", width)))
     asciiart.headerDiv()
 
     choice = input()
 
     return choice
-
 
 def main():
     while True:
@@ -209,7 +200,7 @@ def main():
             width = get_terminal_width()
             clear()
             starsheet.charDisplay()
-            print(center_text("Press Enter to return to the main menu...", width))
+            print(txtfrm.rollermenu(center_text("Press Enter to return to the main menu...", width)))
             asciiart.headerDiv()
             input()
             clear()
@@ -219,7 +210,6 @@ def main():
         else:
             invalid()
             continue
-
 
 if __name__ == "__main__":
     main()
