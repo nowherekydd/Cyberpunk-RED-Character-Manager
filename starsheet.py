@@ -652,8 +652,7 @@ nbsp = "\u00A0" # Spacer
 
 # Defines score display so that charScores isn't ball-bustingly long
 
-charSPACE = center_text(nbsp, 42)
-charEND = center_text(nbsp, 43)
+charEND = center_text(nbsp, 30)
 charINT = txtfrm.bold(center_text(f"{ntlScore}", 3)) + center_text("INT //", 6)
 charREF = txtfrm.bold(center_text(f"{refScore}", 3)) + center_text("REF //", 6)
 charDEX = txtfrm.bold(center_text(f"{dexScore}", 3)) + center_text("DEX //", 6)
@@ -670,7 +669,7 @@ def charHead():
     print(txtfrm.bold(center_text(charHandle, width)))
 
 def charScores():
-    print(charSPACE + charINT + charREF + charDEX + charTECH + charCOOL + charWILL + charMOVE + charBODY + charEMP + charLUCK + charEND)
+    print(charEND + charINT + charREF + charDEX + charTECH + charCOOL + charWILL + charMOVE + charBODY + charEMP + charLUCK)
 
 # Testing
 
@@ -686,4 +685,4 @@ def charDisplay():
 
     
 # Prints out charsheet on run for debug/testing. Comment out when not in use.
-charDisplay()
+# charDisplay()

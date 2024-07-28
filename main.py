@@ -98,7 +98,7 @@ def prompt_user_for_category():
     categories = list(starsheet.skillDict.keys())
 
     asciiart.headerDiv()
-    print(center_text(f"Choose a category.", width))
+    print(center_text("Choose a category.", width))
     asciiart.headerDiv()
 
     for i, category in enumerate(categories, start=1):
@@ -106,7 +106,18 @@ def prompt_user_for_category():
 
     asciiart.headerDiv()
 
-    choice = int(input())
+    while True:
+        try:
+            choice = int(input(center_text("Enter the number of your choice: ", width)).strip())
+            if 1 <= choice <= len(categories):
+                chosen_category = categories[choice - 1]
+                print(center_text(f"You chose: {chosen_category}", width))  # Debugging print
+                return chosen_category
+            else:
+                print(center_text("Invalid choice. Please enter a number corresponding to a category.", width))
+        except ValueError:
+            print(center_text("Invalid input. Please enter a valid number.", width))
+
 
 
 def prompt_user_for_skill(category):

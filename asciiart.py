@@ -29,7 +29,7 @@ nbsp = "\u00A0"
 
 def headerDiv():
     width = get_terminal_width()
-    print(txtfrm.rollerheader(center_text(nbsp, width)))
+    print(center_text(nbsp, width))
 
 def charsDiv():
     width = get_terminal_width()
@@ -52,7 +52,7 @@ def mainHeader():
 
     headerDiv()
     for line in mainheaderASCII:
-        print(txtfrm.rollerheader(center_text(line, width)))
+        print(center_text(line, width))
     headerDiv()
     
 #############################################################################################
@@ -70,5 +70,5 @@ def charsheetheader():
 
     headerDiv()
     for line in charheaderASCII:
-        print(txtfrm.rollerheader(center_text(line, width)))
+        print(center_text(line, width))
     headerDiv()
